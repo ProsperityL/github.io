@@ -19,12 +19,12 @@ body {
 }
 
 .avatar {
-  .avatar {
-  width: 150px; /* Adjusted width */
-  height: auto; /* Automatically adjusts height to maintain aspect ratio */
-  border-radius: 50%;
-  object-fit: cover; /* Ensures the image fits nicely without warping */
-  margin-bottom: 10px;
+  width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Adds a subtle shadow to the image */
 }
 
 /* Name Styles */
