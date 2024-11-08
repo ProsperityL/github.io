@@ -1,3 +1,11 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fcf9f1;
+  display: flex;
+}
+
 /* Sidebar Styles */
 .sidebar {
   background-color: #097969;
@@ -17,7 +25,7 @@
   margin-bottom: 10px;
 }
 
-/* Name Styles - Adjusted for Right Alignment */
+/* Name Styles */
 .name {
   color: #90bfc5;
   font-weight: 300;
@@ -34,7 +42,7 @@
 }
 
 .sidebar-link {
-  color: #fdebd0;
+  color: #fcf9f1;
   text-decoration: none;
   font-weight: 400;
   font-size: 18px;
@@ -42,4 +50,66 @@
 
 .sidebar-link.active {
   font-weight: bold;
+}
+
+/* Social Icons Styles */
+.social-icons {
+  margin-top: 20px; /* Add some space below the section menu */
+  display: flex;
+  gap: 15px; /* Space between icons */
+  justify-content: center;
+}
+
+.icon-link {
+  color: #90bfc5;
+  font-size: 24px;
+  text-decoration: none;
+}
+
+.icon-link:hover {
+  color: #6e9296;
+}
+
+/* Content Styles */
+.content {
+  margin-left: 250px;
+  padding: 20px;
+}
+
+h2 {
+  color: #097969;
+  font-size: 3em;
+  font-weight: 400;
+}
+
+h3 {
+  color: #6e9296;
+  font-size: 2em;
+  font-weight: 400;
+}
+
+h4 {
+  color: #eac866;
+  font-size: 18px; /* Same size as the body text */
+  font-weight: 600; /* Higher weight for emphasis */
+  margin-top: 10px;
+  margin-bottom: 5px;
+}
+
+p {
+  font-weight: 200;
+  font-size: 18px;
+  color: #000;
+  line-height: 1.6;
+}
+
+/* Link Styling */
+a {
+  text-decoration: none; /* No underline by default */
+  color: inherit; /* Inherit the color of the surrounding text */
+  transition: text-decoration 0.3s ease; /* Smooth transition for underline */
+}
+
+a:hover {
+  text-decoration: underline; /* Add underline on hover */
 }
