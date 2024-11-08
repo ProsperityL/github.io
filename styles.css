@@ -19,9 +19,11 @@ body {
 }
 
 .avatar {
-  width: 120px;
-  height: 120px;
+  .avatar {
+  width: 150px; /* Adjusted width */
+  height: auto; /* Automatically adjusts height to maintain aspect ratio */
   border-radius: 50%;
+  object-fit: cover; /* Ensures the image fits nicely without warping */
   margin-bottom: 10px;
 }
 
