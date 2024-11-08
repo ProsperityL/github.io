@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prosperity Land's Website</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fdebd0;
+            overflow-y: scroll;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 20%;
+            height: 100%;
+            background-color: #097969;
+            color: #fdebd0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            color: #90bfc5;
+            font-weight: 300;
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+        }
+
+        .nav-link {
+            margin: 10px 0;
+            cursor: pointer;
+            font-weight: 400;
+        }
+
+        .nav-link.active {
+            color: #90bfc5;
+        }
+
+        .content {
+            margin-left: 25%;
+            padding: 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-weight: 400;
+            font-size: 3em;
+            color: #097969;
+        }
+
+        .subsection-title {
+            font-weight: 400;
+            font-size: 2em;
+            color: #6e9296;
+            margin-top: 20px;
+        }
+
+        .body-text {
+            font-weight: 200;
+            font-size: 1.2em;
+            color: #000;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <img src="avatar.jpg" alt="Avatar" class="avatar">
+        <div class="name">PROSPERITY LAND</div>
+        <ul class="nav-links">
+            <li class="nav-link" data-section="about">ABOUT</li>
+            <li class="nav-link" data-section="research">RESEARCH</li>
+            <li class="nav-link" data-section="teaching">TEACHING</li>
+            <li class="nav-link" data-section="projects">PROJECTS</li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <section id="about">
+            <div class="section-title">ABOUT</div>
+            <div class="subsection-title">CV</div>
+            <div class="body-text">Your CV content goes here.</div>
+        </section>
+
+        <section id="research">
+            <div class="section-title">RESEARCH</div>
+            <div class="subsection-title">Peer-Reviewed Research</div>
+            <div class="body-text">Your peer-reviewed research content goes here.</div>
+            <div class="subsection-title">Working Papers</div>
+            <div class="body-text">Your working papers content goes here.</div>
+        </section>
+
+        <section id="teaching">
+            <div class="section-title">TEACHING</div>
+            <div class="subsection-title">Computational Social Science</div>
+            <div class="body-text">Your content for computational social science goes here.</div>
+            <div class="subsection-title">Political Science</div>
+            <div class="body-text">Your content for political science goes here.</div>
+        </section>
+
+        <section id="projects">
+            <div class="section-title">PROJECTS</div>
+            <div class="body-text">Your projects content goes here.</div>
+        </section>
+    </div>
+
+    <script>
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (window.scrollY >= sectionTop - 60) {
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.section === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById(link.dataset.section).scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
